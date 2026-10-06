@@ -9,10 +9,6 @@
       Y: =0
     Children:
 
-      # ============================================================
-      # HEADER
-      # ============================================================
-
       - shpHeader_1:
           Control: Rectangle@2.3.0
           Properties:
@@ -91,8 +87,8 @@
             Font: =Font.'Open Sans'
             Height: =20
             Size: =10
-            Text: ="Select SharePoint source files, states and reporting period"
-            Width: =650
+            Text: ="Select SharePoint files, states and reporting period"
+            Width: =600
             X: =145
             Y: =49
 
@@ -110,24 +106,16 @@
             X: =Parent.Width - 240
             Y: =34
 
-      # ============================================================
-      # MAIN WORKFLOW CARD
-      # ============================================================
-
       - conWorkflowInputs:
           Control: GroupContainer@1.5.0
           Variant: ManualLayout
           Properties:
             Fill: =RGBA(255, 255, 255, 1)
-            Height: =520
+            Height: =500
             Width: =Parent.Width - 64
             X: =32
             Y: =100
           Children:
-
-            # ======================================================
-            # TITLE
-            # ======================================================
 
             - lblWorkflowInputs:
                 Control: Label@2.5.1
@@ -140,7 +128,7 @@
                   Text: ="WORKFLOW INPUTS"
                   Width: =250
                   X: =28
-                  Y: =15
+                  Y: =18
 
             - lblWorkflowHelp:
                 Control: Label@2.5.1
@@ -149,14 +137,14 @@
                   Font: =Font.'Open Sans'
                   Height: =22
                   Size: =9
-                  Text: ="Select source files from SharePoint. Select between 7 and 9 PDF files."
-                  Width: =800
+                  Text: ="Select source files from SharePoint. Select 7 to 9 PDF files."
+                  Width: =750
                   X: =28
-                  Y: =45
+                  Y: =48
 
-            # ======================================================
-            # MAIN ACCOUNT FILE
-            # ======================================================
+            # =====================================================
+            # MAIN ACCOUNT
+            # =====================================================
 
             - lblMainAccountFile:
                 Control: Label@2.5.1
@@ -169,7 +157,7 @@
                   Text: ="Main Account File"
                   Width: =300
                   X: =28
-                  Y: =78
+                  Y: =77
 
             - cmbMainAccountFile:
                 Control: Classic/ComboBox@2.4.0
@@ -177,21 +165,21 @@
                   BorderColor: =RGBA(203, 198, 192, 1)
                   ChevronBackground: =RGBA(208, 74, 2, 1)
                   ChevronFill: =RGBA(255, 255, 255, 1)
-                  DisplayFields: =["{FilenameWithExtension}"]
+                  DisplayFields: =["Name"]
                   Font: =Font.'Open Sans'
                   Height: =38
-                  InputTextPlaceholder: ="Select Main Account Excel file"
-                  Items: =Filter(ReconDocuments, EndsWith('{FilenameWithExtension}', ".xlsx"))
-                  SearchFields: =["{FilenameWithExtension}"]
+                  InputTextPlaceholder: ="Select Excel file from SharePoint"
+                  Items: =Filter(colSharePointFiles,EndsWith(Lower(Name),".xlsx") || EndsWith(Lower(Name),".xls"))
+                  SearchFields: =["Name"]
                   SelectMultiple: =false
                   Size: =10
                   Width: =560
                   X: =28
-                  Y: =102
+                  Y: =106
 
-            # ======================================================
-            # ID SAMPLE FILE
-            # ======================================================
+            # =====================================================
+            # ID SAMPLE
+            # =====================================================
 
             - lblIdSampleFile:
                 Control: Label@2.5.1
@@ -204,7 +192,7 @@
                   Text: ="ID Sample File"
                   Width: =300
                   X: =620
-                  Y: =78
+                  Y: =77
 
             - cmbIdSampleFile:
                 Control: Classic/ComboBox@2.4.0
@@ -212,21 +200,21 @@
                   BorderColor: =RGBA(203, 198, 192, 1)
                   ChevronBackground: =RGBA(208, 74, 2, 1)
                   ChevronFill: =RGBA(255, 255, 255, 1)
-                  DisplayFields: =["{FilenameWithExtension}"]
+                  DisplayFields: =["Name"]
                   Font: =Font.'Open Sans'
                   Height: =38
-                  InputTextPlaceholder: ="Select ID Sample Excel file"
-                  Items: =Filter(ReconDocuments, EndsWith('{FilenameWithExtension}', ".xlsx"))
-                  SearchFields: =["{FilenameWithExtension}"]
+                  InputTextPlaceholder: ="Select Excel file from SharePoint"
+                  Items: =Filter(colSharePointFiles,EndsWith(Lower(Name),".xlsx") || EndsWith(Lower(Name),".xls"))
+                  SearchFields: =["Name"]
                   SelectMultiple: =false
                   Size: =10
                   Width: =560
                   X: =620
-                  Y: =102
+                  Y: =106
 
-            # ======================================================
-            # MULTIPLE PDF FILES
-            # ======================================================
+            # =====================================================
+            # PDF FILES
+            # =====================================================
 
             - lblPdfFiles:
                 Control: Label@2.5.1
@@ -239,7 +227,7 @@
                   Text: ="PDF Files (Select 7 to 9)"
                   Width: =300
                   X: =28
-                  Y: =158
+                  Y: =164
 
             - cmbPdfFiles:
                 Control: Classic/ComboBox@2.4.0
@@ -247,22 +235,22 @@
                   BorderColor: =RGBA(203, 198, 192, 1)
                   ChevronBackground: =RGBA(208, 74, 2, 1)
                   ChevronFill: =RGBA(255, 255, 255, 1)
-                  DisplayFields: =["{FilenameWithExtension}"]
+                  DisplayFields: =["Name"]
                   Font: =Font.'Open Sans'
-                  Height: =45
-                  InputTextPlaceholder: ="Select 7 to 9 PDF files"
-                  Items: =Filter(ReconDocuments, EndsWith('{FilenameWithExtension}', ".pdf"))
-                  SearchFields: =["{FilenameWithExtension}"]
+                  Height: =42
+                  InputTextPlaceholder: ="Select PDF files from SharePoint"
+                  Items: =Filter(colSharePointFiles,EndsWith(Lower(Name),".pdf"))
+                  SearchFields: =["Name"]
                   SelectMultiple: =true
                   Size: =10
                   Width: =560
                   X: =28
-                  Y: =182
+                  Y: =188
 
             - lblPdfCount:
                 Control: Label@2.5.1
                 Properties:
-                  Color: =If(CountRows(cmbPdfFiles.SelectedItems) >= 7 && CountRows(cmbPdfFiles.SelectedItems) <= 9, RGBA(0,120,60,1), RGBA(208,74,2,1))
+                  Color: =If(CountRows(cmbPdfFiles.SelectedItems)>=7 && CountRows(cmbPdfFiles.SelectedItems)<=9,RGBA(0,120,60,1),RGBA(208,74,2,1))
                   Font: =Font.'Open Sans'
                   FontWeight: =FontWeight.Semibold
                   Height: =20
@@ -270,11 +258,11 @@
                   Text: =CountRows(cmbPdfFiles.SelectedItems) & " of 7-9 PDF files selected"
                   Width: =350
                   X: =28
-                  Y: =230
+                  Y: =232
 
-            # ======================================================
-            # MULTIPLE STATES
-            # ======================================================
+            # =====================================================
+            # STATES
+            # =====================================================
 
             - lblState:
                 Control: Label@2.5.1
@@ -287,7 +275,7 @@
                   Text: ="States"
                   Width: =300
                   X: =620
-                  Y: =158
+                  Y: =164
 
             - cmbStates:
                 Control: Classic/ComboBox@2.4.0
@@ -297,7 +285,7 @@
                   ChevronFill: =RGBA(255, 255, 255, 1)
                   DisplayFields: =["Value"]
                   Font: =Font.'Open Sans'
-                  Height: =45
+                  Height: =42
                   InputTextPlaceholder: ="Select one or more states"
                   Items: =["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"]
                   SearchFields: =["Value"]
@@ -305,7 +293,7 @@
                   Size: =10
                   Width: =560
                   X: =620
-                  Y: =182
+                  Y: =188
 
             - lblSelectedStates:
                 Control: Label@2.5.1
@@ -317,11 +305,11 @@
                   Text: =If(CountRows(cmbStates.SelectedItems)=0,"No states selected",Concat(cmbStates.SelectedItems,Value,", "))
                   Width: =560
                   X: =620
-                  Y: =230
+                  Y: =232
 
-            # ======================================================
+            # =====================================================
             # PERIOD
-            # ======================================================
+            # =====================================================
 
             - lblPeriod:
                 Control: Label@2.5.1
@@ -390,9 +378,9 @@
                   X: =318
                   Y: =315
 
-            # ======================================================
+            # =====================================================
             # REQUESTED BY
-            # ======================================================
+            # =====================================================
 
             - lblRequestedBy:
                 Control: Label@2.5.1
@@ -421,23 +409,23 @@
                   X: =620
                   Y: =315
 
-            # ======================================================
-            # INPUT SUMMARY
-            # ======================================================
+            # =====================================================
+            # SUMMARY
+            # =====================================================
 
-            - lblInputSummary:
+            - lblSelectionSummary:
                 Control: Label@2.5.1
                 Properties:
                   Color: =RGBA(100, 100, 100, 1)
                   Font: =Font.'Open Sans'
-                  Height: =22
+                  Height: =20
                   Size: =9
                   Text: ="Selection Summary"
-                  Width: =200
+                  Width: =180
                   X: =28
-                  Y: =375
+                  Y: =370
 
-            - lblInputSummaryValue:
+            - lblSelectionSummaryValue:
                 Control: Label@2.5.1
                 Properties:
                   Color: =RGBA(45, 45, 45, 1)
@@ -448,55 +436,56 @@
                   Text: =CountRows(cmbPdfFiles.SelectedItems) & " PDF(s) | " & CountRows(cmbStates.SelectedItems) & " State(s) | " & drpMonth.Selected.Value & " " & drpYear.Selected.Value
                   Width: =700
                   X: =28
-                  Y: =397
+                  Y: =391
 
-            # ======================================================
-            # BACK BUTTON
-            # ======================================================
+            # =====================================================
+            # BACK
+            # =====================================================
 
             - btnBack:
                 Control: Classic/Button@2.2.0
                 Properties:
-                  BorderColor: =RGBA(100, 100, 100, 1)
-                  Color: =RGBA(45, 45, 45, 1)
-                  Fill: =RGBA(240, 240, 240, 1)
+                  BorderColor: =RGBA(100,100,100,1)
+                  Color: =RGBA(45,45,45,1)
+                  Fill: =RGBA(240,240,240,1)
                   Font: =Font.'Open Sans'
                   FontWeight: =FontWeight.Semibold
                   Height: =40
-                  HoverFill: =RGBA(225, 225, 225, 1)
-                  OnSelect: =Navigate(Screen1, ScreenTransition.Fade)
+                  HoverFill: =RGBA(225,225,225,1)
+                  OnSelect: =Navigate(Screen1,ScreenTransition.Fade)
                   Size: =10
                   Text: ="Back"
                   Width: =130
                   X: =Parent.Width - 340
-                  Y: =450
+                  Y: =435
 
-            # ======================================================
-            # PREPARE WORKFLOW
-            # ======================================================
+            # =====================================================
+            # PREPARE WORKFLOW -> SodexoAutomation
+            # =====================================================
 
             - btnStartPrepareWorkflow:
                 Control: Classic/Button@2.2.0
                 Properties:
-                  Color: =RGBA(255, 255, 255, 1)
-                  Fill: =RGBA(208, 74, 2, 1)
+                  Color: =RGBA(255,255,255,1)
+                  Fill: =RGBA(208,74,2,1)
                   Font: =Font.'Open Sans'
                   FontWeight: =FontWeight.Semibold
                   Height: =40
-                  HoverFill: =ColorFade(RGBA(208, 74, 2, 1), -15%)
+                  HoverFill: =ColorFade(RGBA(208,74,2,1),-15%)
                   OnSelect: |-
                     =If(
-                        IsBlank(cmbMainAccountFile.Selected),
+                        IsBlank(cmbMainAccountFile.Selected.Name),
                         Notify(
                             "Please select the Main Account file.",
                             NotificationType.Error
                         ),
-                        IsBlank(cmbIdSampleFile.Selected),
+                        IsBlank(cmbIdSampleFile.Selected.Name),
                         Notify(
                             "Please select the ID Sample file.",
                             NotificationType.Error
                         ),
-                        CountRows(cmbPdfFiles.SelectedItems) < 7 || CountRows(cmbPdfFiles.SelectedItems) > 9,
+                        CountRows(cmbPdfFiles.SelectedItems) < 7 ||
+                        CountRows(cmbPdfFiles.SelectedItems) > 9,
                         Notify(
                             "Please select between 7 and 9 PDF files.",
                             NotificationType.Error
@@ -506,8 +495,27 @@
                             "Please select at least one state.",
                             NotificationType.Error
                         ),
+                        Set(
+                            varWorkflowResult,
+                            SodexoAutomation.Run(
+                                "Process",
+                                cmbMainAccountFile.Selected.Path,
+                                cmbIdSampleFile.Selected.Path,
+                                JSON(
+                                    cmbPdfFiles.SelectedItems,
+                                    JSONFormat.Compact
+                                ),
+                                Concat(
+                                    cmbStates.SelectedItems,
+                                    Value,
+                                    ","
+                                ),
+                                drpMonth.Selected.Value & " " & drpYear.Selected.Value,
+                                txtRequestedBy.Text
+                            )
+                        );
                         Notify(
-                            "Workflow inputs validated successfully.",
+                            "Sodexo workflow started successfully.",
                             NotificationType.Success
                         )
                     )
@@ -515,4 +523,4 @@
                   Text: ="Prepare Workflow"
                   Width: =180
                   X: =Parent.Width - 198
-                  Y: =450
+                  Y: =435
