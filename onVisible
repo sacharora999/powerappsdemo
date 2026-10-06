@@ -1,0 +1,23 @@
+Set(
+    varFileResponse,
+    SodexoAutomation.Run(
+        "GetFiles",
+        "",
+        "",
+        "",
+        "",
+        "",
+        User().Email
+    )
+);
+
+ClearCollect(
+    colSharePointFiles,
+    ForAll(
+        ParseJSON(varFileResponse.filesJson),
+        {
+            Name: Text(ThisRecord.Name),
+            Path: Text(ThisRecord.Path)
+        }
+    )
+)
