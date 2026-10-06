@@ -1,0 +1,17 @@
+// App.OnStart
+Set(varOrange, ColorValue("#D04A02"));
+Set(varOrange2, ColorValue("#E0301E"));
+Set(varYellow, ColorValue("#FFB600"));
+Set(varDark, ColorValue("#252525"));
+Set(varText, ColorValue("#2D2D2D"));
+Set(varSecondaryText, ColorValue("#666666"));
+Set(varBackground, ColorValue("#F5F5F5"));
+Set(varCard, Color.White);
+Set(varBorder, ColorValue("#E5E5E5"));
+Set(varSuccess, ColorValue("#2E7D32"));
+Set(varWarningBg, ColorValue("#FFF3E0"));
+Set(varPrepBg, ColorValue("#FFF8F2"));
+Set(varReviewBg, ColorValue("#FFFBEA"));
+Set(varApprovalBg, ColorValue("#FFF4F4"));
+Set(varSectionBg, ColorValue("#FAFAFA"));
+Set(varProcessing, false);

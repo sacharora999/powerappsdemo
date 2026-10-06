@@ -1,0 +1,72 @@
+SCREEN
+scrFilingTracker.Fill = varBackground
+
+SIDEBAR
+Width: 190
+Fill: varDark
+Selected navigation Fill: varOrange
+Navigation text Color: Color.White
+
+HEADER
+Height: ~105
+Fill: Color.White
+Title: "Filing & Payment Tracker"
+Title size: 26
+Title weight: Semibold
+Subtitle: "Manage preparation, review, approval and filing details"
+Subtitle size: 13
+Subtitle color: varSecondaryText
+
+MAIN CARD
+X: conSidebar.Width + 20
+Width: Parent.Width - conSidebar.Width - 40
+Fill: Color.White
+BorderColor: varBorder
+BorderThickness: 1
+Corner radius: 8-12
+Padding: 20
+
+TITLE
+Accent rectangle Fill: varOrange
+Title: "Filing & Payment Details"
+Subtitle: "Capture the status and key information for preparation, review, approval, filing and payment."
+
+STATUS ROW
+Use a Horizontal container with three equal child containers.
+Preparation Fill: varPrepBg
+Review Fill: varReviewBg
+Approval Fill: varApprovalBg
+Gap: 12-16
+Card padding: 16
+
+MIDDLE ROW
+Horizontal container.
+Blocker: ~50%
+Filing: ~50%
+Gap: 16
+Blocker default Fill: varSectionBg
+Blocker dynamic Fill:
+If(drpBlockerCategory.Selected.Value <> "None", varWarningBg, varSectionBg)
+
+PAYMENT
+Full-width section.
+Arrange inputs in 3 columns:
+Column 1: Payment Amount, Discount Amount
+Column 2: Prepayments, Payment Confirmation Number
+Column 3: Payment Date
+
+ACTIONS
+Right aligned.
+Reviewer button:
+Fill = varOrange
+Color = Color.White
+
+Approver button:
+Fill = Color.White
+Color = varOrange
+BorderColor = varOrange
+BorderThickness = 2
+
+Recommended control height: 40-44
+Recommended label size: 11-12
+Section title size: 15-17, Semibold

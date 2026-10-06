@@ -1,0 +1,48 @@
+scrFilingTracker
+├─ conSidebar
+│  ├─ imgLogo
+│  ├─ btnHome
+│  ├─ btnMyFilings
+│  ├─ btnNewFiling
+│  └─ btnReports
+├─ conHeader
+│  ├─ lblAppTitle
+│  └─ lblAppSubtitle
+└─ conMain
+   ├─ conTitle
+   │  ├─ shpTitleAccent
+   │  ├─ lblFormTitle
+   │  └─ lblFormSubtitle
+   ├─ conStatusRow
+   │  ├─ conPreparation
+   │  │  ├─ lblPreparationTitle
+   │  │  ├─ drpPreparationStatus
+   │  │  └─ dpPreparationCompleted
+   │  ├─ conReview
+   │  │  ├─ lblReviewTitle
+   │  │  ├─ drpReviewStatus
+   │  │  └─ dpReviewCompleted
+   │  └─ conApproval
+   │     ├─ lblApprovalTitle
+   │     ├─ drpApprovalStatus
+   │     └─ dpApprovalCompleted
+   ├─ conMiddleRow
+   │  ├─ conBlocker
+   │  │  ├─ lblBlockerTitle
+   │  │  ├─ drpBlockerCategory
+   │  │  └─ txtBlockerComment
+   │  └─ conFiling
+   │     ├─ lblFilingTitle
+   │     ├─ drpFilingStatus
+   │     ├─ dpFilingDate
+   │     └─ txtFilingConfirmation
+   ├─ conPayment
+   │  ├─ lblPaymentTitle
+   │  ├─ txtPaymentAmount
+   │  ├─ txtDiscountAmount
+   │  ├─ txtPrepayments
+   │  ├─ txtPaymentConfirmation
+   │  └─ dpPaymentDate
+   └─ conActions
+      ├─ btnNotifyReviewer
+      └─ btnNotifyApprover

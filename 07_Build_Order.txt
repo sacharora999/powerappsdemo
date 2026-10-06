@@ -1,0 +1,25 @@
+BUILD ORDER
+
+1. Create a blank Canvas app using Tablet/Desktop layout.
+2. Rename the first screen to scrFilingTracker.
+3. Paste 01_App_OnStart.txt into App.OnStart and run OnStart.
+4. Add a left vertical container named conSidebar.
+5. Add the header container named conHeader.
+6. Add conMain as the main white content card.
+7. Add conTitle and its orange accent/title/subtitle.
+8. Add conStatusRow as a horizontal container.
+9. Add conPreparation, conReview, conApproval.
+10. Create the six status/date controls using 03_Fields_and_Items.txt.
+11. Add conMiddleRow with conBlocker and conFiling.
+12. Add blocker and filing controls.
+13. Add conPayment and its five controls.
+14. Add conActions and the two notification buttons.
+15. Apply properties from 04_Layout_and_Style.txt.
+16. Apply formulas from 06_Validation_Formulas.txt.
+17. Use 05_Button_Formulas.txt for POC button behavior.
+18. Preview the app and test each status/date dependency.
+19. Save and publish.
+20. Later, connect the two Power Automate flows and replace only the button OnSelect formulas.
+
+TIP
+Use responsive horizontal/vertical containers instead of positioning every control with fixed X/Y values.

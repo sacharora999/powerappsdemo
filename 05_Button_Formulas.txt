@@ -1,0 +1,49 @@
+// POC MODE – buttons work before Power Automate is connected.
+
+// btnNotifyReviewer.Text
+"Notify Reviewer"
+
+// btnNotifyReviewer.OnSelect
+Notify(
+    "POC: Reviewer notification would be triggered here.",
+    NotificationType.Success
+)
+
+// btnNotifyApprover.Text
+"Notify Approver"
+
+// btnNotifyApprover.OnSelect
+Notify(
+    "POC: Approver notification would be triggered here.",
+    NotificationType.Success
+)
+
+
+// FUTURE POWER AUTOMATE VERSION
+// Replace the POC formula after adding flows to the app.
+
+// Example reviewer:
+// Set(
+//     varReviewerResponse,
+//     'PA-Notify-Reviewer'.Run(
+//         drpPreparationStatus.Selected.Value,
+//         Text(dpPreparationCompleted.SelectedDate, "yyyy-mm-dd"),
+//         drpReviewStatus.Selected.Value,
+//         drpBlockerCategory.Selected.Value,
+//         txtBlockerComment.Text
+//     )
+// );
+// Notify("Reviewer notification sent.", NotificationType.Success);
+
+// Example approver:
+// Set(
+//     varApproverResponse,
+//     'PA-Notify-Approver'.Run(
+//         drpReviewStatus.Selected.Value,
+//         Text(dpReviewCompleted.SelectedDate, "yyyy-mm-dd"),
+//         drpApprovalStatus.Selected.Value,
+//         drpFilingStatus.Selected.Value,
+//         Text(dpFilingDate.SelectedDate, "yyyy-mm-dd")
+//     )
+// );
+// Notify("Approver notification sent.", NotificationType.Success);

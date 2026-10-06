@@ -1,0 +1,72 @@
+FIELD / CONTROL / TYPE / ITEMS
+
+Preparation Status
+Control: drpPreparationStatus
+Type: Dropdown
+Items:
+["Not Started","In Progress","Completed"]
+
+Preparation Completed Date
+Control: dpPreparationCompleted
+Type: Date Picker
+
+Review Status
+Control: drpReviewStatus
+Items:
+["Not Started","Pending Review","In Review","Completed","Rework Required"]
+
+Review Completed Date
+Control: dpReviewCompleted
+Type: Date Picker
+
+Approval Status
+Control: drpApprovalStatus
+Items:
+["Not Started","Pending Approval","Approved","Rejected"]
+
+Approval Completed Date
+Control: dpApprovalCompleted
+Type: Date Picker
+
+Blocker Category
+Control: drpBlockerCategory
+Items:
+["None","Data Issue","Client Dependency","Technical Issue","Reviewer Dependency","Approver Dependency","Payment Issue","Other"]
+
+Blocker Comment
+Control: txtBlockerComment
+Type: Multiline Text Input
+HintText: "Enter blocker comments here..."
+
+Filing Status
+Control: drpFilingStatus
+Items:
+["Not Started","In Progress","Ready to File","Filed","Rejected"]
+
+Filing Date
+Control: dpFilingDate
+Type: Date Picker
+
+Payment Amount
+Control: txtPaymentAmount
+Type: Number input (preferred) or Text Input
+
+Discount Amount
+Control: txtDiscountAmount
+Type: Number input (preferred) or Text Input
+
+Prepayments
+Control: txtPrepayments
+Type: Number input (preferred) or Text Input
+
+Filing Confirmation Number
+Control: txtFilingConfirmation
+Type: Text Input
+
+Payment Confirmation Number
+Control: txtPaymentConfirmation
+Type: Text Input
+
+Payment Date
+Control: dpPaymentDate
+Type: Date Picker

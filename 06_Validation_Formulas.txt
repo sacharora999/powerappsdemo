@@ -1,0 +1,51 @@
+// Preparation Completed Date.DisplayMode
+If(
+    drpPreparationStatus.Selected.Value = "Completed",
+    DisplayMode.Edit,
+    DisplayMode.Disabled
+)
+
+// Review Completed Date.DisplayMode
+If(
+    drpReviewStatus.Selected.Value = "Completed",
+    DisplayMode.Edit,
+    DisplayMode.Disabled
+)
+
+// Approval Completed Date.DisplayMode
+If(
+    drpApprovalStatus.Selected.Value = "Approved",
+    DisplayMode.Edit,
+    DisplayMode.Disabled
+)
+
+// Filing Date.DisplayMode
+If(
+    drpFilingStatus.Selected.Value = "Filed",
+    DisplayMode.Edit,
+    DisplayMode.Disabled
+)
+
+// Notify Reviewer.DisplayMode
+If(
+    drpPreparationStatus.Selected.Value = "Completed",
+    DisplayMode.Edit,
+    DisplayMode.Disabled
+)
+
+// Notify Approver.DisplayMode
+If(
+    drpReviewStatus.Selected.Value = "Completed",
+    DisplayMode.Edit,
+    DisplayMode.Disabled
+)
+
+// Blocker Comment.Visible (optional)
+drpBlockerCategory.Selected.Value <> "None"
+
+// Blocker card Fill
+If(
+    drpBlockerCategory.Selected.Value <> "None",
+    varWarningBg,
+    varSectionBg
+)
