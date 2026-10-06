@@ -1,0 +1,371 @@
+Screens:
+  Screen2:
+    Properties:
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+    Children:
+      - conPrepareWorkflow:
+          Control: GroupContainer@1.5.0
+          Variant: ManualLayout
+          Properties:
+            Fill: =RGBA(247, 245, 242, 1)
+            Height: =Parent.Height
+            Width: =Parent.Width
+          Children:
+            - shpHeader_1:
+                Control: Rectangle@2.3.0
+                Properties:
+                  Fill: =RGBA(45, 45, 45, 1)
+                  Height: =72
+                  Width: =Parent.Width - 32
+                  X: =16
+                  Y: =12
+            - logoAmber:
+                Control: Rectangle@2.3.0
+                Properties:
+                  Fill: =RGBA(235, 140, 0, 1)
+                  Height: =14
+                  Width: =34
+                  X: =40
+                  Y: =24
+            - logoYellow:
+                Control: Rectangle@2.3.0
+                Properties:
+                  Fill: =RGBA(255, 182, 0, 1)
+                  Height: =12
+                  Width: =27
+                  X: =62
+                  Y: =19
+            - logoOrange:
+                Control: Rectangle@2.3.0
+                Properties:
+                  Fill: =RGBA(208, 74, 2, 1)
+                  Height: =15
+                  Width: =38
+                  X: =52
+                  Y: =33
+            - logoRed:
+                Control: Rectangle@2.3.0
+                Properties:
+                  Fill: =RGBA(224, 48, 30, 1)
+                  Height: =13
+                  Width: =30
+                  X: =76
+                  Y: =28
+            - lblPwcMark:
+                Control: Label@2.5.1
+                Properties:
+                  Color: =RGBA(255, 255, 255, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Semibold
+                  Height: =20
+                  Size: =12
+                  Text: ="pwc"
+                  Width: =55
+                  X: =46
+                  Y: =48
+            - lblPrepareTitle:
+                Control: Label@2.5.1
+                Properties:
+                  Color: =RGBA(255, 255, 255, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Semibold
+                  Height: =30
+                  Size: =20
+                  Text: ="Prepare Workflow"
+                  Width: =500
+                  X: =145
+                  Y: =20
+            - lblPrepareSubtitle:
+                Control: Label@2.5.1
+                Properties:
+                  Color: =RGBA(215, 215, 215, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =20
+                  Size: =10
+                  Text: ="Configure reconciliation input files and reporting period"
+                  Width: =600
+                  X: =145
+                  Y: =49
+            - lblTaxOperations:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Right
+                  Color: =RGBA(255, 255, 255, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Semibold
+                  Height: =25
+                  Size: =11
+                  Text: ="Tax Operations"
+                  Width: =200
+                  X: =Parent.Width - 240
+                  Y: =34
+            - conWorkflowInputs:
+                Control: GroupContainer@1.5.0
+                Variant: ManualLayout
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =440
+                  Width: =Parent.Width - 64
+                  X: =32
+                  Y: =100
+                Children:
+                  - lblWorkflowInputs:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(208, 74, 2, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =30
+                        Size: =15
+                        Text: ="WORKFLOW INPUTS"
+                        Width: =250
+                        X: =28
+                        Y: =18
+                  - lblWorkflowHelp:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(100, 100, 100, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =22
+                        Size: =9
+                        Text: ="Provide source files, states and reporting period before starting the workflow."
+                        Width: =750
+                        X: =28
+                        Y: =48
+                  - lblMainAccountFile:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(70, 70, 70, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =22
+                        Size: =10
+                        Text: ="Main Account File Name"
+                        Width: =300
+                        X: =28
+                        Y: =82
+                  - txtMainAccountFile:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(203, 198, 192, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =38
+                        HintText: ="e.g. july_main_account_recon.xlsx"
+                        HoverBorderColor: =RGBA(208, 74, 2, 1)
+                        Size: =10
+                        Width: =560
+                        X: =28
+                        Y: =106
+                  - lblIdSampleFile:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(70, 70, 70, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =22
+                        Size: =10
+                        Text: ="ID Sample File Name"
+                        Width: =300
+                        X: =620
+                        Y: =82
+                  - txtIdSampleFile:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(203, 198, 192, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =38
+                        HintText: ="e.g. id_sample_data.xlsx"
+                        HoverBorderColor: =RGBA(208, 74, 2, 1)
+                        Size: =10
+                        Width: =560
+                        X: =620
+                        Y: =106
+                  - lblPdfFile:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(70, 70, 70, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =22
+                        Size: =10
+                        Text: ="PDF File Name"
+                        Width: =300
+                        X: =28
+                        Y: =164
+                  - txtPdfFile:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(203, 198, 192, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =38
+                        HintText: ="e.g. FISUR004_ALL_20260801.pdf"
+                        HoverBorderColor: =RGBA(208, 74, 2, 1)
+                        Size: =10
+                        Width: =560
+                        X: =28
+                        Y: =188
+                  - lblState:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(70, 70, 70, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =22
+                        Size: =10
+                        Text: ="States"
+                        Width: =300
+                        X: =620
+                        Y: =164
+                  - cmbStates:
+                      Control: Classic/ComboBox@2.4.0
+                      Properties:
+                        BorderColor: =RGBA(203, 198, 192, 1)
+                        ChevronBackground: =RGBA(208, 74, 2, 1)
+                        ChevronFill: =RGBA(255, 255, 255, 1)
+                        DisplayFields: =["Value"]
+                        Font: =Font.'Open Sans'
+                        Height: =38
+                        InputTextPlaceholder: ="Select one or more states"
+                        Items: =["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"]
+                        SearchFields: =["Value"]
+                        Size: =10
+                        Width: =560
+                        X: =620
+                        Y: =188
+                  - lblPeriod:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(70, 70, 70, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =22
+                        Size: =10
+                        Text: ="Period"
+                        Width: =300
+                        X: =28
+                        Y: =246
+                  - lblMonth:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(100, 100, 100, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =20
+                        Size: =9
+                        Text: ="Month"
+                        Width: =200
+                        X: =28
+                        Y: =270
+                  - drpMonth:
+                      Control: Classic/DropDown@2.3.1
+                      Properties:
+                        BorderColor: =RGBA(203, 198, 192, 1)
+                        ChevronBackground: =RGBA(208, 74, 2, 1)
+                        ChevronFill: =RGBA(255, 255, 255, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =38
+                        Items: =["January","February","March","April","May","June","July","August","September","October","November","December"]
+                        Items.Value: =Value
+                        Size: =10
+                        Width: =270
+                        X: =28
+                        Y: =291
+                  - lblYear:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(100, 100, 100, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =20
+                        Size: =9
+                        Text: ="Year"
+                        Width: =200
+                        X: =318
+                        Y: =270
+                  - drpYear:
+                      Control: Classic/DropDown@2.3.1
+                      Properties:
+                        BorderColor: =RGBA(203, 198, 192, 1)
+                        ChevronBackground: =RGBA(208, 74, 2, 1)
+                        ChevronFill: =RGBA(255, 255, 255, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =38
+                        Items: =["2025","2026","2027","2028","2029","2030"]
+                        Items.Value: =Value
+                        Size: =10
+                        Width: =270
+                        X: =318
+                        Y: =291
+                  - lblRequestedBy:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(70, 70, 70, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =22
+                        Size: =10
+                        Text: ="Requested By"
+                        Width: =300
+                        X: =620
+                        Y: =246
+                  - txtRequestedBy:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(203, 198, 192, 1)
+                        Default: =User().Email
+                        Font: =Font.'Open Sans'
+                        Height: =38
+                        HintText: ="Requester email"
+                        HoverBorderColor: =RGBA(208, 74, 2, 1)
+                        Size: =10
+                        Width: =560
+                        X: =620
+                        Y: =291
+                  - lblSelectedStatesTitle:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(100, 100, 100, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =20
+                        Size: =9
+                        Text: ="Selected States"
+                        Width: =180
+                        X: =28
+                        Y: =342
+                  - lblSelectedStates:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(45, 45, 45, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =25
+                        Size: =10
+                        Text: =If(CountRows(cmbStates.SelectedItems)=0,"None selected",Concat(cmbStates.SelectedItems,Value,", "))
+                        Width: =700
+                        X: =28
+                        Y: =361
+                  - btnBack:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =RGBA(100, 100, 100, 1)
+                        Color: =RGBA(45, 45, 45, 1)
+                        Fill: =RGBA(240, 240, 240, 1)
+                        Font: =Font.'Open Sans'
+                        HoverFill: =RGBA(225, 225, 225, 1)
+                        OnSelect: =Navigate(Screen1, ScreenTransition.Fade)
+                        Size: =10
+                        Text: ="Back"
+                        Width: =130
+                        X: =Parent.Width - 340
+                        Y: =375
+                  - btnStartPrepareWorkflow:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        Color: =RGBA(255, 255, 255, 1)
+                        Fill: =RGBA(208, 74, 2, 1)
+                        Font: =Font.'Open Sans'
+                        HoverFill: =ColorFade(RGBA(208, 74, 2, 1), -15%)
+                        OnSelect: =Notify("Workflow preparation triggered successfully.",NotificationType.Success)
+                        Size: =10
+                        Text: ="Prepare Workflow"
+                        Width: =180
+                        X: =Parent.Width - 198
+                        Y: =375

@@ -1,0 +1,539 @@
+Screens:
+  Screen1:
+    Properties:
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+    Children:
+      - conFilingPaymentTracker:
+          Control: GroupContainer@1.5.0
+          Variant: ManualLayout
+          Properties:
+            Fill: =RGBA(246, 247, 249, 1)
+            Height: =Parent.Height
+            Width: =Parent.Width
+          Children:
+            - shpHeader:
+                Control: Rectangle@2.3.0
+                Properties:
+                  Fill: =RGBA(45, 45, 45, 1)
+                  Height: =62
+                  Width: =Parent.Width - 32
+                  X: =16
+                  Y: =12
+            - lblTitle:
+                Control: Label@2.5.1
+                Properties:
+                  Color: =RGBA(255, 255, 255, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Semibold
+                  Height: =30
+                  Size: =20
+                  Text: ="Filing & Payment Tracker"
+                  Width: =500
+                  X: =40
+                  Y: =18
+            - lblSubtitle:
+                Control: Label@2.5.1
+                Properties:
+                  Color: =RGBA(215, 215, 215, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =20
+                  Size: =10
+                  Text: ="Preparation, review, approval and filing management"
+                  Width: =500
+                  X: =40
+                  Y: =46
+            - lblTaxOps:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Right
+                  Color: =RGBA(255, 255, 255, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Semibold
+                  Height: =25
+                  Size: =11
+                  Text: ="Tax Operations"
+                  Width: =200
+                  X: =Parent.Width - 240
+                  Y: =30
+            - conWorkflow:
+                Control: GroupContainer@1.5.0
+                Variant: ManualLayout
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =197
+                  Width: =Parent.Width - 32
+                  X: =16
+                  Y: =98
+                Children:
+                  - lblWorkflow:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(45, 45, 45, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =28
+                        Size: =14
+                        Text: ="WORKFLOW"
+                        Width: =200
+                        X: =18
+                        Y: =8
+                  - lblPreparationStatus:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(75, 75, 75, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =20
+                        Size: =9
+                        Text: ="Preparation Status"
+                        Width: =190
+                        X: =18
+                        Y: =42
+                  - drpPreparationStatus:
+                      Control: Classic/DropDown@2.3.1
+                      Properties:
+                        BorderColor: =RGBA(190, 190, 190, 1)
+                        ChevronBackground: =RGBA(208, 74, 2, 1)
+                        ChevronFill: =RGBA(255, 255, 255, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =34
+                        Items: =["Not Started","In Progress","Completed"]
+                        Items.Value: =Value
+                        Size: =10
+                        Width: =280
+                        X: =18
+                        Y: =64
+                  - lblReviewStatus:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(75, 75, 75, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =20
+                        Size: =9
+                        Text: ="Review Status"
+                        Width: =190
+                        X: =330
+                        Y: =42
+                  - drpReviewStatus:
+                      Control: Classic/DropDown@2.3.1
+                      Properties:
+                        BorderColor: =RGBA(190, 190, 190, 1)
+                        ChevronBackground: =RGBA(208, 74, 2, 1)
+                        ChevronFill: =RGBA(255, 255, 255, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =34
+                        Items: =["Not Started","Pending Review","In Review","Completed"]
+                        Items.Value: =Value
+                        Size: =10
+                        Width: =280
+                        X: =330
+                        Y: =64
+                  - lblApprovalStatus:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(75, 75, 75, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =20
+                        Size: =9
+                        Text: ="Approval Status"
+                        Width: =190
+                        X: =642
+                        Y: =42
+                  - drpApprovalStatus:
+                      Control: Classic/DropDown@2.3.1
+                      Properties:
+                        BorderColor: =RGBA(190, 190, 190, 1)
+                        ChevronBackground: =RGBA(208, 74, 2, 1)
+                        ChevronFill: =RGBA(255, 255, 255, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =34
+                        Items: =["Not Started","Pending Approval","Approved","Rejected"]
+                        Items.Value: =Value
+                        Size: =10
+                        Width: =280
+                        X: =642
+                        Y: =64
+                  - lblPreparationDate:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(75, 75, 75, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =20
+                        Size: =9
+                        Text: ="Preparation Completed Date"
+                        Width: =190
+                        X: =18
+                        Y: =103
+                  - dpPreparationCompleted:
+                      Control: Classic/DatePicker@2.6.0
+                      Properties:
+                        BorderColor: =RGBA(190, 190, 190, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =30
+                        IconBackground: =RGBA(208, 74, 2, 1)
+                        IconFill: =RGBA(255, 255, 255, 1)
+                        Size: =9
+                        Width: =280
+                        X: =18
+                        Y: =122
+                  - lblReviewDate:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(75, 75, 75, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =20
+                        Size: =9
+                        Text: ="Review Completed Date"
+                        Width: =190
+                        X: =330
+                        Y: =103
+                  - dpReviewCompleted:
+                      Control: Classic/DatePicker@2.6.0
+                      Properties:
+                        BorderColor: =RGBA(190, 190, 190, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =30
+                        IconBackground: =RGBA(208, 74, 2, 1)
+                        IconFill: =RGBA(255, 255, 255, 1)
+                        Size: =9
+                        Width: =280
+                        X: =330
+                        Y: =122
+                  - lblApprovalDate:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(75, 75, 75, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =20
+                        Size: =9
+                        Text: ="Approval Completed Date"
+                        Width: =190
+                        X: =642
+                        Y: =103
+                  - dpApprovalCompleted:
+                      Control: Classic/DatePicker@2.6.0
+                      Properties:
+                        BorderColor: =RGBA(190, 190, 190, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =30
+                        IconBackground: =RGBA(208, 74, 2, 1)
+                        IconFill: =RGBA(255, 255, 255, 1)
+                        Size: =9
+                        Width: =280
+                        X: =642
+                        Y: =122
+            - conBlocker:
+                Control: GroupContainer@1.5.0
+                Variant: ManualLayout
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =147
+                  Width: =Parent.Width - 32
+                  X: =16
+                  Y: =295
+                Children:
+                  - lblBlockerHeading:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(45, 45, 45, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =25
+                        Text: ="BLOCKER INFORMATION"
+                        Width: =260
+                        X: =18
+                        Y: =6
+                  - lblBlockerCategory:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(75, 75, 75, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =18
+                        Size: =9
+                        Text: ="Blocker Category"
+                        Width: =180
+                        X: =18
+                        Y: =35
+                  - drpBlockerCategory:
+                      Control: Classic/DropDown@2.3.1
+                      Properties:
+                        BorderColor: =RGBA(190, 190, 190, 1)
+                        ChevronBackground: =RGBA(208, 74, 2, 1)
+                        ChevronFill: =RGBA(255, 255, 255, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =32
+                        Items: =["None","Data Issue","Technical Issue","Client Dependency","Reviewer Dependency","Approval Dependency","Payment Issue","Other"]
+                        Items.Value: =Value
+                        Size: =10
+                        Width: =300
+                        X: =18
+                        Y: =54
+                  - lblBlockerComment:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(75, 75, 75, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =18
+                        Size: =9
+                        Text: ="Blocker Comment"
+                        Width: =180
+                        X: =350
+                        Y: =35
+                  - txtBlockerComment:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(190, 190, 190, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =32
+                        HintText: ="Enter blocker details"
+                        HoverBorderColor: =RGBA(208, 74, 2, 1)
+                        Size: =10
+                        Width: =Parent.Width - 386
+                        X: =350
+                        Y: =54
+            - conFiling:
+                Control: GroupContainer@1.5.0
+                Variant: ManualLayout
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =294
+                  Width: =1334
+                  X: =16
+                  Y: =442
+                Children:
+                  - lblFilingHeading:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(45, 45, 45, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =26
+                        Text: ="FILING & PAYMENT"
+                        Width: =220
+                        X: =18
+                        Y: =6
+                  - lblFilingStatus:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(75, 75, 75, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =18
+                        Size: =9
+                        Text: ="Filing Status"
+                        Width: =180
+                        X: =18
+                        Y: =36
+                  - drpFilingStatus:
+                      Control: Classic/DropDown@2.3.1
+                      Properties:
+                        BorderColor: =RGBA(190, 190, 190, 1)
+                        ChevronBackground: =RGBA(208, 74, 2, 1)
+                        ChevronFill: =RGBA(255, 255, 255, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =32
+                        Items: =["Not Started","Ready to File","Filed","Rejected"]
+                        Items.Value: =Value
+                        Size: =10
+                        Width: =250
+                        X: =18
+                        Y: =55
+                  - lblPrepayments:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(75, 75, 75, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =18
+                        Size: =9
+                        Text: ="Prepayments"
+                        Width: =180
+                        X: =18
+                        Y: =99
+                  - txtPrepayments:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(190, 190, 190, 1)
+                        Font: =Font.'Open Sans'
+                        Format: =TextFormat.Number
+                        Height: =32
+                        HintText: ="0.00"
+                        Size: =10
+                        Width: =250
+                        X: =18
+                        Y: =118
+                  - lblFilingDate:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(75, 75, 75, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =18
+                        Size: =9
+                        Text: ="Filing Date"
+                        Width: =180
+                        X: =286
+                        Y: =36
+                  - dpFilingDate:
+                      Control: Classic/DatePicker@2.6.0
+                      Properties:
+                        BorderColor: =RGBA(190, 190, 190, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =32
+                        IconBackground: =RGBA(208, 74, 2, 1)
+                        IconFill: =RGBA(255, 255, 255, 1)
+                        Size: =10
+                        Width: =250
+                        X: =286
+                        Y: =55
+                  - lblPaymentDate:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(75, 75, 75, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =18
+                        Size: =9
+                        Text: ="Payment Date"
+                        Width: =180
+                        X: =286
+                        Y: =99
+                  - dpPaymentDate:
+                      Control: Classic/DatePicker@2.6.0
+                      Properties:
+                        BorderColor: =RGBA(190, 190, 190, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =32
+                        IconBackground: =RGBA(208, 74, 2, 1)
+                        IconFill: =RGBA(255, 255, 255, 1)
+                        Size: =10
+                        Width: =250
+                        X: =286
+                        Y: =118
+                  - lblPaymentAmount:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(75, 75, 75, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =18
+                        Size: =9
+                        Text: ="Payment Amount"
+                        Width: =180
+                        X: =554
+                        Y: =36
+                  - txtPaymentAmount:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(190, 190, 190, 1)
+                        Font: =Font.'Open Sans'
+                        Format: =TextFormat.Number
+                        Height: =32
+                        HintText: ="0.00"
+                        Size: =10
+                        Width: =250
+                        X: =554
+                        Y: =55
+                  - lblFilingConfirmation:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(75, 75, 75, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =18
+                        Size: =9
+                        Text: ="Filing Confirmation Number"
+                        Width: =210
+                        X: =554
+                        Y: =99
+                  - txtFilingConfirmation:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(190, 190, 190, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =32
+                        HintText: ="Enter confirmation number"
+                        Size: =10
+                        Width: =250
+                        X: =554
+                        Y: =118
+                  - lblDiscountAmount:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(75, 75, 75, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =18
+                        Size: =9
+                        Text: ="Discount Amount"
+                        Width: =180
+                        X: =822
+                        Y: =36
+                  - txtDiscountAmount:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(190, 190, 190, 1)
+                        Font: =Font.'Open Sans'
+                        Format: =TextFormat.Number
+                        Height: =32
+                        HintText: ="0.00"
+                        Size: =10
+                        Width: =250
+                        X: =822
+                        Y: =55
+                  - lblPaymentConfirmation:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(75, 75, 75, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =18
+                        Size: =9
+                        Text: ="Payment Confirmation Number"
+                        Width: =220
+                        X: =822
+                        Y: =99
+                  - txtPaymentConfirmation:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(190, 190, 190, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =32
+                        HintText: ="Enter confirmation number"
+                        Size: =10
+                        Width: =250
+                        X: =822
+                        Y: =118
+                  - btnNotifyReviewer:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        Color: =RGBA(255, 255, 255, 1)
+                        Fill: =RGBA(208, 74, 2, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =36
+                        HoverFill: =ColorFade(RGBA(208, 74, 2, 1), -15%)
+                        OnSelect: =Notify("Reviewer notification triggered successfully.", NotificationType.Success)
+                        Size: =10
+                        Text: ="Notify Reviewer"
+                        Width: =150
+                        X: =1011
+                        Y: =187
+                  - btnNotifyApprover:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        Color: =RGBA(255, 255, 255, 1)
+                        Fill: =RGBA(45, 45, 45, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =36
+                        HoverFill: =ColorFade(RGBA(45, 45, 45, 1), -15%)
+                        OnSelect: =Notify("Approver notification triggered successfully.", NotificationType.Success)
+                        Size: =10
+                        Text: ="Notify Approver"
+                        Width: =150
+                        X: =1175
+                        Y: =187
+      - btnPrepareWorkflow:
+          Control: Classic/Button@2.2.0
+          Properties:
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(208, 74, 2, 1)
+            Font: =Font.'Open Sans'
+            Height: =35
+            HoverFill: =ColorFade(RGBA(208, 74, 2, 1), -15%)
+            OnSelect: =Navigate(Screen2, ScreenTransition.Fade)
+            Size: =10
+            Text: ="Prepare Workflow"
+            Width: =177
+            X: =835
+            Y: =630
